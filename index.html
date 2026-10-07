@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>もぐもぐ食べる天使いお</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 左側の背景動画（snake_head.mp4 を使用） -->
+  <div class="side-bg left-bg">
+    <video src="snake_head.mp4" autoplay loop muted playsinline></video>
+  </div>
+
+  <!-- 右側の背景動画（snake_head.mp4 を使用） -->
+  <div class="side-bg right-bg">
+    <video src="snake_head.mp4" autoplay loop muted playsinline></video>
+  </div>
+
+  <!-- 中央のゲーム画面 -->
+  <div class="container">
+    <h1>もぐもぐ食べる天使いお</h1>
+    <div class="score-display">SCORE: <span id="score">0</span></div>
+    <canvas id="gameCanvas" width="500" height="500"></canvas>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

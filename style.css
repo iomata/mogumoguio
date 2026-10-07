@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #0f172a;
+  color: #ffffff;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ----------------------------------
+   左右の背景動画エリア
+---------------------------------- */
+.side-bg {
+  position: fixed;
+  top: 0;
+  width: calc((100vw - 640px) / 2); /* 中央のゲーム画面以外の幅を半分ずつ分け合う */
+  height: 100vh;
+  overflow: hidden;
+  z-index: 1; /* ゲーム画面の後ろに配置 */
+}
+
+/* 左端に配置 */
+.left-bg {
+  left: 0;
+}
+
+/* 右端に配置 */
+.right-bg {
+  right: 0;
+}
+
+.side-bg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 領域に合わせて綺麗に拡大縮小 */
+  opacity: 0.6;      /* 少し透明にしてゲーム画面を見やすく */
+  display: block;
+}
+
+/* ----------------------------------
+   中央のゲーム画面エリア
+---------------------------------- */
+.container {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  background-color: rgba(15, 23, 42, 0.85);
+  padding: 24px;
+  border-radius: 16px;
+  backdrop-filter: blur(4px);
+}
+
+h1 {
+  font-size: 1.8rem;
+  color: #38bdf8;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.score-display {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #f59e0b;
+}
+
+canvas {
+  background: #000000;
+  border: 3px solid #38bdf8;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
+}
+
+/* スマホなど画面幅が狭い端末では背景動画を非表示 */
+@media (max-width: 700px) {
+  .side-bg {
+    display: none;
+  }
+}
